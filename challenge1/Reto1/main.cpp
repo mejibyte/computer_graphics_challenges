@@ -1,4 +1,3 @@
-// Example from Hearn & Baker Computer Graphics with OpenGL.  2004
 #include <GLUT/glut.h>      // (or others, depending on the system in use)
 #include <OpenGL/OpenGL.h>
 #include <OpenGL/gl.h>
