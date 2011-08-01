@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		329B212613E2DF1E0061D55C /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 329B212513E2DF1E0061D55C /* main.cpp */; };
+		329B215C13E2E40A0061D55C /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 329B215913E2E40A0061D55C /* Cocoa.framework */; };
+		329B215D13E2E40A0061D55C /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 329B215A13E2E40A0061D55C /* GLUT.framework */; };
+		329B216113E30ECD0061D55C /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 329B216013E30ECD0061D55C /* OpenGL.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -26,6 +29,9 @@
 		329B212113E2DF1E0061D55C /* Reto1 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Reto1; sourceTree = BUILT_PRODUCTS_DIR; };
 		329B212513E2DF1E0061D55C /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		329B212713E2DF1E0061D55C /* Reto1.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = Reto1.1; sourceTree = "<group>"; };
+		329B215913E2E40A0061D55C /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		329B215A13E2E40A0061D55C /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = System/Library/Frameworks/GLUT.framework; sourceTree = SDKROOT; };
+		329B216013E30ECD0061D55C /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +39,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				329B216113E30ECD0061D55C /* OpenGL.framework in Frameworks */,
+				329B215C13E2E40A0061D55C /* Cocoa.framework in Frameworks */,
+				329B215D13E2E40A0061D55C /* GLUT.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +51,9 @@
 		329B211613E2DF1D0061D55C = {
 			isa = PBXGroup;
 			children = (
+				329B216013E30ECD0061D55C /* OpenGL.framework */,
+				329B215913E2E40A0061D55C /* Cocoa.framework */,
+				329B215A13E2E40A0061D55C /* GLUT.framework */,
 				329B212413E2DF1E0061D55C /* Reto1 */,
 				329B212213E2DF1E0061D55C /* Products */,
 			);
@@ -191,6 +203,7 @@
 				329B212C13E2DF1E0061D55C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
