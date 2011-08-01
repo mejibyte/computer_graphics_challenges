@@ -1,0 +1,7 @@
+Using naive algorithm:
+Rendered 10100 lines.
+It took 711 milliseconds.
+
+Using Bresenham's algorithm:
+Rendered 10100 lines.
+It took 567 milliseconds.
