@@ -4,6 +4,8 @@
 #include <OpenGL/gl.h>
 #include <OpenGL/glu.h>
 
+#include <sys/time.h>
+
 #include <iostream>
 #include <utility>
 #include <cmath>
@@ -19,6 +21,12 @@ const int NAIVE = 0, BRESENHAM = 1;
 
 int round(float x){ // Rounds to closest integer - only works for nonnegative doubles.
     return floor(x + 0.5);
+}
+
+long currentMilliseconds(){
+    timeval tv;
+    gettimeofday(&tv, NULL);
+    return tv.tv_sec * 1000 + tv.tv_usec / 1000;
 }
 
 void drawPoint(const point &somePoint) {
@@ -112,7 +120,7 @@ void drawSingleLineUsingBresenhamsAlgorithm(point start, point end) {
 
 }
 
-void drawLinesUsingAlgorithm(int algorithm = NAIVE) {
+int drawLinesUsingAlgorithm(int algorithm = NAIVE) {
     algorithm == NAIVE ? glClearColor (1.0, 1.0, 1.0, 0.0) : glClearColor (0.0, 0.0, 0.0, 0.0);
     glMatrixMode (GL_PROJECTION);
     gluOrtho2D (0, SIZE, 0, SIZE);	// Left, Right, Bottom, Top corners
@@ -120,55 +128,75 @@ void drawLinesUsingAlgorithm(int algorithm = NAIVE) {
     glClear (GL_COLOR_BUFFER_BIT);  // Clear display window.
     
     int step = 5;
+    int count = 0;
     
-    // top to left
-    glColor3f(0.0, 0.0, 1.0); //Blue
-    for (int i = 0; i <= SIZE; i += step){
-        if (algorithm == NAIVE){
-            drawSingleLineUsingNaiveAlgorithm(make_pair(0, i), make_pair(i, SIZE));            
-        }else{
-            drawSingleLineUsingBresenhamsAlgorithm(make_pair(0, i), make_pair(i, SIZE));
+    while (count < 10000){
+        // top to left
+        glColor3f(0.0, 0.0, 1.0); //Blue
+        for (int i = 0; i <= SIZE; i += step){
+            if (algorithm == NAIVE){
+                drawSingleLineUsingNaiveAlgorithm(make_pair(0, i), make_pair(i, SIZE));            
+            }else{
+                drawSingleLineUsingBresenhamsAlgorithm(make_pair(0, i), make_pair(i, SIZE));
+            }
+            count++;
+        }    
+        // top to right
+        glColor3f(1.0, 0.0, 0.0); //Red
+        for (int i = 0; i <= SIZE; i += step){
+            if (algorithm == NAIVE){
+                drawSingleLineUsingNaiveAlgorithm(make_pair(i, SIZE), make_pair(SIZE, SIZE - i));
+            }else{        
+                drawSingleLineUsingBresenhamsAlgorithm(make_pair(i, SIZE), make_pair(SIZE, SIZE - i));
+            }
+            count++;            
+        }
+        
+        // bottom to right
+        glColor3f(0.0, 1.0, 0.0); //Green    
+        for (int i = 0; i <= SIZE; i += step){
+            if (algorithm == NAIVE){
+                drawSingleLineUsingNaiveAlgorithm(make_pair(i, 0), make_pair(SIZE, i));
+            }else{
+                drawSingleLineUsingBresenhamsAlgorithm(make_pair(i, 0), make_pair(SIZE, i));
+            }
+            count++;            
+        }
+        
+        // bottom to left
+        glColor3f(1.0, 1.0, 0.0);//Yellow
+        for (int i = 0; i <= SIZE; i += step){
+            if (algorithm == NAIVE){
+                drawSingleLineUsingNaiveAlgorithm(make_pair(i, 0), make_pair(0, SIZE - i));
+            }else{
+                drawSingleLineUsingBresenhamsAlgorithm(make_pair(i, 0), make_pair(0, SIZE - i));
+            }
+            count++;            
         }
     }    
-    // top to right
-    glColor3f(1.0, 0.0, 0.0); //Red
-    for (int i = 0; i <= SIZE; i += step){
-        if (algorithm == NAIVE){
-            drawSingleLineUsingNaiveAlgorithm(make_pair(i, SIZE), make_pair(SIZE, SIZE - i));
-        }else{        
-            drawSingleLineUsingBresenhamsAlgorithm(make_pair(i, SIZE), make_pair(SIZE, SIZE - i));
-        }
-    }
-    
-    // bottom to right
-    glColor3f(0.0, 1.0, 0.0); //Green    
-    for (int i = 0; i <= SIZE; i += step){
-        if (algorithm == NAIVE){
-            drawSingleLineUsingNaiveAlgorithm(make_pair(i, 0), make_pair(SIZE, i));
-        }else{
-            drawSingleLineUsingBresenhamsAlgorithm(make_pair(i, 0), make_pair(SIZE, i));
-        }
-    }
-    
-    // bottom to left
-    glColor3f(1.0, 1.0, 0.0);//Yellow
-    for (int i = 0; i <= SIZE; i += step){
-        if (algorithm == NAIVE){
-            drawSingleLineUsingNaiveAlgorithm(make_pair(i, 0), make_pair(0, SIZE - i));
-        }else{
-            drawSingleLineUsingBresenhamsAlgorithm(make_pair(i, 0), make_pair(0, SIZE - i));
-        }
-    }
-    
     glFlush();
+    return count;
 }
 
 void drawLinesUsingNaiveAlgorithm (){
-    drawLinesUsingAlgorithm(NAIVE);
+    long millisecondsBeforeStart = currentMilliseconds();
+    int count = drawLinesUsingAlgorithm(NAIVE);
+    long time = currentMilliseconds() - millisecondsBeforeStart;
+    printf("Using naive algorithm:\n");
+    printf("Rendered %d lines.\n", count);
+    printf("It took %ld milliseconds.\n", time);
+    printf("Wow, that sucked!\n");
 }
 
 void drawLinesUsingBresenhamsAlgorithm (void){
-    drawLinesUsingAlgorithm(BRESENHAM);
+    long millisecondsBeforeStart = currentMilliseconds();
+    int count = drawLinesUsingAlgorithm(BRESENHAM);
+    long time = currentMilliseconds() - millisecondsBeforeStart;
+    printf("Using Bresenham's algorithm:\n");
+    printf("Rendered %d lines.\n", count);
+    printf("It took %ld milliseconds.\n", time);
+    printf("Whoa, that was fast! Way to go.\n");
+
 }
 
 
