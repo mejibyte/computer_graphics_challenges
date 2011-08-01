@@ -33,6 +33,12 @@ int round(float x){ // Rounds to closest integer - only works for nonnegative do
     return floor(x + 0.5);
 }
 
+void RenderString(float x, float y, const char* string){      
+    glColor3f(1, 1, 1); 
+    glRasterPos2f(x, y);
+    glutBitmapString(GLUT_BITMAP_TIMES_ROMAN_24, string);
+}
+
 void drawPoint(const point &somePoint) {
 	glBegin(GL_POINTS) ;
     glVertex2i(somePoint.first, somePoint.second);
@@ -125,6 +131,7 @@ void drawSingleLineUsingBresenhamsAlgorithm(point start, point end) {
 }
 
 void drawLinesUsingNaiveAlgorithm (){
+    init();
     glClear (GL_COLOR_BUFFER_BIT);  // Clear display window.
     
     int step = 5;
@@ -186,6 +193,7 @@ void testBresenham() {
 }
 
 void drawLinesUsingBresenhamsAlgorithm (void){
+    init();
     glClear (GL_COLOR_BUFFER_BIT);  // Clear display window.
     
 //    testBresenham();
@@ -256,8 +264,11 @@ int main (int argc, char** argv) {
     glutInitWindowPosition (50, 100);   // Set top-left display-window position.
     glutInitWindowSize (500, 500);      // Set display-window width and height.
     glutCreateWindow ("Naive algorithm"); // Create display window.
+    glutDisplayFunc (drawLinesUsingNaiveAlgorithm);       // Send graphics to display window.
     
-    init();                            // Execute initialization procedure.
+    glutInitWindowPosition (600, 100);   // Set top-left display-window position.
+    glutInitWindowSize (500, 500);      // Set display-window width and height.
+    glutCreateWindow ("Bresenham's algorithm"); // Create display window.
     glutDisplayFunc (drawLinesUsingBresenhamsAlgorithm);       // Send graphics to display window.
     
     glutMainLoop();                    // Display everything and wait.
