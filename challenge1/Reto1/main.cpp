@@ -157,41 +157,9 @@ void drawLinesUsingNaiveAlgorithm (){
     glFlush ( );     // Process all OpenGL routines as quickly as possible.
 }
 
-void testBresenham() {
-    glColor3f(0.0, 0.0, 1.0); //Blue    
-//    drawSingleLineUsingBresenhamsAlgorithm(make_pair(0, 0), make_pair(50, 10));
-//    drawSingleLineUsingBresenhamsAlgorithm(make_pair(50, 10), make_pair(60, 10));
-//    drawSingleLineUsingBresenhamsAlgorithm(make_pair(60, 10), make_pair(80, 20));
-//    drawSingleLineUsingBresenhamsAlgorithm(make_pair(0, 0), make_pair(20, 10));
-//    drawSingleLineUsingBresenhamsAlgorithm(make_pair(0, 0), make_pair(-20, -10));
-//    drawSingleLineUsingBresenhamsAlgorithm(make_pair(0, 0), make_pair(-20, -10));
-    // 1
-    glColor3f(1.0, 0.0, 0.0); // Red
-//    drawSingleLineUsingBresenhamsAlgorithm(make_pair(0, 0), make_pair(10, 10));
-//    drawSingleLineUsingBresenhamsAlgorithm(make_pair(10, 10), make_pair(30, 50));
-//    drawSingleLineUsingBresenhamsAlgorithm(make_pair(10, 10), make_pair(30, 50));
-//    drawSingleLineUsingBresenhamsAlgorithm(make_pair(-10, -20), make_pair(-20, -40));
-//    drawSingleLineUsingBresenhamsAlgorithm(make_pair(0, 0), make_pair(-20, -10));     
-    // 2
-    glColor3f(0.0, 1.0, 0.0); // Green
-//    drawSingleLineUsingBresenhamsAlgorithm(make_pair(0, 0), make_pair(0, 100));
-//    drawSingleLineUsingBresenhamsAlgorithm(make_pair(30, 50), make_pair(30, 80));
-//    drawSingleLineUsingBresenhamsAlgorithm(make_pair(10, 0), make_pair(0, 40));
-//    drawSingleLineUsingBresenhamsAlgorithm(make_pair(10, 0), make_pair(0, 10));
-    // 3
-    assert(getOctant(make_pair(0, 0), make_pair(-4, 2)) == 3); 
-    assert(getOctant(make_pair(-5, 1), make_pair(-8, 2))== 3);     
-    assert(getOctant(make_pair(-5, 1), make_pair(-2000000000, 2))== 3);     
-    
-    glFlush();
-}
-
 void drawLinesUsingBresenhamsAlgorithm (void){
     init();
     glClear (GL_COLOR_BUFFER_BIT);  // Clear display window.
-    
-//    testBresenham();
-//    return;
     
     int step = 5;
     
