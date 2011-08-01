@@ -33,12 +33,6 @@ int round(float x){ // Rounds to closest integer - only works for nonnegative do
     return floor(x + 0.5);
 }
 
-void RenderString(float x, float y, const char* string){      
-    glColor3f(1, 1, 1); 
-    glRasterPos2f(x, y);
-    glutBitmapString(GLUT_BITMAP_TIMES_ROMAN_24, string);
-}
-
 void drawPoint(const point &somePoint) {
 	glBegin(GL_POINTS) ;
     glVertex2i(somePoint.first, somePoint.second);
