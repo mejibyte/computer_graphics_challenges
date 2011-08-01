@@ -17,18 +17,6 @@ const int SIZE = 500, R = SIZE / 2;
 
 const int NAIVE = 0, BRESENHAM = 1;
 
-void init (void) {
-    glClearColor (1.0, 1.0, 1.0, 0.0);  // Set display-window color to white.
-    // Alpha 0.0 means transparency
-    
-    glMatrixMode (GL_PROJECTION);       // Set projection parameters.
-    // Other values are:
-    // GL_MODELVIEW: Transform from world coordinates to camera coordinates
-    // GL_PROJECTION: How to project from world to proection surface
-    // GL_TEXTURE: How to map from texture to object
-    gluOrtho2D (0, SIZE, 0, SIZE);	// Left, Right, Bottom, Top corners
-}
-
 int round(float x){ // Rounds to closest integer - only works for nonnegative doubles.
     return floor(x + 0.5);
 }
@@ -125,7 +113,10 @@ void drawSingleLineUsingBresenhamsAlgorithm(point start, point end) {
 }
 
 void drawLinesUsingAlgorithm(int algorithm = NAIVE) {
-    init();
+    algorithm == NAIVE ? glClearColor (1.0, 1.0, 1.0, 0.0) : glClearColor (0.0, 0.0, 0.0, 0.0);
+    glMatrixMode (GL_PROJECTION);
+    gluOrtho2D (0, SIZE, 0, SIZE);	// Left, Right, Bottom, Top corners
+
     glClear (GL_COLOR_BUFFER_BIT);  // Clear display window.
     
     int step = 5;
@@ -219,7 +210,7 @@ int main (int argc, char** argv) {
     glutCreateWindow ("Naive algorithm"); // Create display window.
     glutDisplayFunc (drawLinesUsingNaiveAlgorithm);       // Send graphics to display window.
     
-    glutInitWindowPosition (600, 100);   // Set top-left display-window position.
+    glutInitWindowPosition (650, 100);   // Set top-left display-window position.
     glutInitWindowSize (500, 500);      // Set display-window width and height.
     glutCreateWindow ("Bresenham's algorithm"); // Create display window.
     glutDisplayFunc (drawLinesUsingBresenhamsAlgorithm);       // Send graphics to display window.
