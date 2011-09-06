@@ -12,3 +12,10 @@ Challenge 2 - Cohen-Sutherland algorithm
 Generate random line segments and use a rectangle clipping algorithm to show the parts of the lines that are inside the rectangle in a different color.
 
 [![Bresenham's algorithm](https://github.com/andmej/computer_graphics_challenges/raw/master/challenge2/pack/screenshot.png)](https://github.com/andmej/computer_graphics_challenges/blob/master/challenge2/challenge2/main.cpp)
+
+Challenge 3 - Robotic Arm
+-------------------------
+
+Create a robotic arm with 3 articulations: shoulder, elbow and wrist.
+
+[![Screenshot 1](https://github.com/andmej/computer_graphics_challenges/blob/master/challenge3/shots/1.png?raw=true)](https://github.com/andmej/computer_graphics_challenges/tree/master/challenge3)
