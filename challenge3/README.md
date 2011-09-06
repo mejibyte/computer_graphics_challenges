@@ -24,4 +24,6 @@ On the window that appears, press:
 Screenshots
 -----------
 
-Coming soon.
+![Screenshot 1](https://github.com/andmej/computer_graphics_challenges/blob/master/challenge3/shots/1.png)
+![Screenshot 2](https://github.com/andmej/computer_graphics_challenges/blob/master/challenge3/shots/2.png)
+![Screenshot 3](https://github.com/andmej/computer_graphics_challenges/blob/master/challenge3/shots/3.png)
