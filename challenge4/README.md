@@ -10,6 +10,8 @@ Create a robotic arm in OpenGL with 3 articulations: shoulder, elbow and wrist.
 Run it yourself
 ---------------
 
+These instructions are for Mac OS X. Your mileage may vary.
+
     cd challenge4/src
     g++ main.cpp -framework GLUT -framework OpenGL -o arm
     ./arm
@@ -33,4 +35,4 @@ Screenshot
 Video demo
 -----------
 
-See the (video demo on YouTube)[http://www.youtube.com/watch?v=SfxGiCqAHNg].
+See the [video demo on YouTube](http://www.youtube.com/watch?v=SfxGiCqAHNg).
