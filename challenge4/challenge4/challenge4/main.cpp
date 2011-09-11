@@ -10,7 +10,7 @@
 
 using namespace std;
 
-GLfloat angle, fAspect;
+GLfloat cameraDistance = 12, cameraAngle = 0;
 
 // angles = { Y rotation at shoulder, Z rotation at shoulder, Z rotation at elbow, X rotation at wrist }
 int arm_angles[5] = {0, 0, 0, 0, 0};
@@ -25,6 +25,12 @@ void change_angle(int angle, int delta, int minimum = 0, int maximum = 180) {
 // Desplegar la escena 3D
 void display(void) {
     glClear(GL_COLOR_BUFFER_BIT);
+    
+    glLoadIdentity();
+    GLfloat x = cameraDistance * sin(cameraAngle);
+    GLfloat z = cameraDistance * cos(cameraAngle);
+    gluLookAt (x, 0.0, z, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0);    
+    
     
     glPushMatrix();
         glRotatef((GLfloat) arm_angles[SHOULDER_Y], 0., 1., 0.);
@@ -62,56 +68,42 @@ void display(void) {
     glutSwapBuffers();
 }
 
-// Especificar los parametros de visualizacion
-void visualizationParams(void) {
-	// Sistema de coordenadas de proyeccion
-	glMatrixMode(GL_PROJECTION);
-	// Inicializa el sistema de coordenadas de la proyeccion
-	glLoadIdentity();
-    
-	// Especifica proyeccion perspectiva
-	gluPerspective(45,fAspect,0.1,500);
-    
-	// Especifica el sistema de coordenadas del modelo
-	glMatrixMode(GL_MODELVIEW);
-	// Inicializa el sistema de coordenadas del modelo
-	glLoadIdentity();
-    
-	// Especifica la posicion del observador
-	// Posicion del ojo, hacia donde mira, vector arriba
-	gluLookAt(0,0,18, 0,0,0, 0,1,0);
-}
 
 // Se llama cuando cambia el tamaño de la ventana
 void reshape(GLsizei w, GLsizei h) {
-	// Para prevenir division por 0
-	if ( h == 0 ) h = 1;
-    
-	// Tamanyo del viewport
+    // Tamanyo del viewport
 	glViewport(0, 0, w, h);
     
-	// Aspect Ration
-	fAspect = (GLfloat)w/(GLfloat)h;
+	glMatrixMode(GL_PROJECTION);
+	glLoadIdentity();
+
+    glFrustum (-1.0, 1.0, -1.0, 1.0, 1.5, 300.0);
     
-	visualizationParams();
+	glMatrixMode(GL_MODELVIEW);
+	glLoadIdentity();
 }
 
 // Responder a los eventos de teclas especiales
-void specialKeys(int key, int x, int y)
-{
+void specialKeys(int key, int x, int y) {
+    GLfloat distanceDelta = 1.0, angleDelta = 5 * M_PI / 180.0;
     if(key == GLUT_KEY_UP) {
+        cameraDistance -= distanceDelta;
+        cameraDistance = max((GLfloat)2.0, cameraDistance);
     }
     if(key == GLUT_KEY_DOWN) {
+        cameraDistance += distanceDelta;
     }
     if(key == GLUT_KEY_LEFT) {
+        cameraAngle -= angleDelta;
     }
     if(key == GLUT_KEY_RIGHT) {
+        cameraAngle += angleDelta;
     }
     glutPostRedisplay();
 }
 
 void keyboard(unsigned char key, int x, int y) {
-    int delta = 9;
+    int delta = 5;
 
     switch (key) {
         case 27: //ESC
@@ -135,10 +127,10 @@ void keyboard(unsigned char key, int x, int y) {
             change_angle(ELBOW_Z, -delta, 0, 135);
             break;
         case 'r':
-            change_angle(WRIST_X, delta, -90, 90);
+            change_angle(WRIST_X, delta, -45, 45);
             break;
         case 'f':
-            change_angle(WRIST_X, -delta, -90, 90);
+            change_angle(WRIST_X, -delta, -45, 45);
             break;
         case 't':
             change_angle(WRIST_Z, delta, -15, 90);
