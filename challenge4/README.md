@@ -10,7 +10,7 @@ Create a robotic arm in OpenGL with 3 articulations: shoulder, elbow and wrist.
 Run it yourself
 ---------------
 
-    cd challenge4/challenge4
+    cd challenge4/src
     g++ main.cpp -framework GLUT -framework OpenGL -o arm
     ./arm
     
