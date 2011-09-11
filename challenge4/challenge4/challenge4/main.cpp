@@ -12,7 +12,7 @@ GLfloat angle, fAspect;
 static int shoulder = 0, elbow = 0;
 
 void elbowAdd() {
-    elbow = (elbow + 5) % 360;     
+    elbow = (elbow + 5) % 360; 
 }
 
 void elbowSubtract() {
@@ -27,44 +27,53 @@ void shoulderSubtract() {
     shoulder = (shoulder - 5) % 360;     
 }
 
-// Desplegar la escena 3D
-void display(void)
-{
-	glClear(GL_COLOR_BUFFER_BIT);
-    
-	glColor3f(1.0f, 1.0f, 1.0f);
-    
-	glPushMatrix();
-    //glTranslatef(-1., 0., 0.);
-    glRotatef((GLfloat) shoulder, 0., 0., 1.);
-    glTranslatef(1., 0., 0.);
-    glPushMatrix();
-    glScalef(2.0, 0.4, 1.0);
-    glutWireCube(1.);       // shoulder
-    glPopMatrix();
-    
-    glTranslatef(1., 0., 0.);
-    glRotatef((GLfloat) elbow, 0., 0., 1.);
-    glTranslatef(1., 0., 0.);
-    glPushMatrix();
-    glScalef(2.0, 0.4, 1.0);
-    glutWireCube(1.);       // elbow
-    glPopMatrix();
-    glPopMatrix();
-	// Ejecutar los comandos 
-	glutSwapBuffers();
+// angles = { Y rotation at shoulder, Z rotation at shoulder, Z rotation at elbow, X rotation at wrist }
+int arm_angles[4] = {0, 0, 0, 0};
+enum { SHOULDER_Y, SHOULDER_Z, ELBOW_Z, WRIST_X };
+
+void change_angle(int angle, int delta) {
+    arm_angles[angle] = (arm_angles[angle] + delta) % 360;
 }
 
-// Inicializar los parametros de despliegue
-void init (void)
-{ 
-    glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
-    angle=45;
+// Desplegar la escena 3D
+void display(void) {
+    glClear(GL_COLOR_BUFFER_BIT);
+    
+    glColor3f(1.0f, 1.0f, 1.0f);
+    
+    glPushMatrix();    
+        //glRotatef((GLfloat) arm_angles[SHOULDER_Y], 0., 1., 0.);
+        glRotatef((GLfloat) arm_angles[SHOULDER_Z], 0., 0., 1.);
+    
+        glTranslatef(1., 0., 0.);
+        glPushMatrix();
+            glScalef(2.0, 0.4, 1.0);
+            glutWireCube(1.);       // shoulder
+        glPopMatrix();
+
+        glTranslatef(1., 0., 0.);
+        glRotatef((GLfloat) arm_angles[ELBOW_Z], 0., 0., 1.);
+        glTranslatef(1., 0., 0.);
+        glPushMatrix();
+            glScalef(2.0, 0.4, 1.0);
+            glutWireCube(1.);       // elbow
+        glPopMatrix();
+    
+//        glTranslatef(1., 0., 0.);
+//        glRotatef((GLfloat) arm_angles[WRIST_X], 1., 0., 0.);
+//        glTranslatef(1., 0., 0.);
+//        glPushMatrix();
+//            glScalef(2.0, 0.4, 1.0);
+//            glutWireCube(1.);       // wrist
+//        glPopMatrix();
+    glPopMatrix();
+    
+    // Ejecutar los comandos 
+    glutSwapBuffers();
 }
 
 // Especificar los parametros de visualizacion
-void visualizationParams(void)
-{
+void visualizationParams(void) {
 	// Sistema de coordenadas de proyeccion
 	glMatrixMode(GL_PROJECTION);
 	// Inicializa el sistema de coordenadas de la proyeccion
@@ -83,9 +92,8 @@ void visualizationParams(void)
 	gluLookAt(0,0,15, 0,0,0, 0,1,0);
 }
 
-// Se llama cuando cambia el tamanyo de la ventana
-void reshape(GLsizei w, GLsizei h)
-{
+// Se llama cuando cambia el tamaño de la ventana
+void reshape(GLsizei w, GLsizei h) {
 	// Para prevenir division por 0
 	if ( h == 0 ) h = 1;
     
@@ -115,17 +123,42 @@ void specialKeys(int key, int x, int y)
     }
     glutPostRedisplay();
 }
+
+void keyboard(unsigned char key, int x, int y) {
+    switch (key) {
+        case 27:
+            exit(0);
+            break;
+        case 'w':		
+            display();
+            break;
+        case 's':		
+            display();            
+            break;
+        case 'a':		
+            display();
+            break;
+        case 'd':		
+            display();
+            break;
+    }
+}
+
+
 // Programa Principal
-int main(int argc, char * argv[])
-{
+int main(int argc, char * argv[]) {
     glutInit(&argc, argv);    
-	glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB);
-	glutInitWindowSize(500,500);
-	glutCreateWindow("Brazo Robot");
-	glutDisplayFunc(display);
-	glutReshapeFunc(reshape);
-	glutSpecialFunc(specialKeys);
-	init();
-	glutMainLoop();
+    glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB);
+    glutInitWindowSize(700, 700);
+    glutCreateWindow("Brazo Robot");
+    glutDisplayFunc(display);
+    glutReshapeFunc(reshape);
+    glutSpecialFunc(specialKeys);
+    glutKeyboardFunc(keyboard);    
+
+    // Inicialización
+    glClearColor(0.0f, 0.0f, 0.0f, 1.0f); // Negro
+    
+    glutMainLoop();
 }
 
