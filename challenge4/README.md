@@ -28,3 +28,9 @@ Screenshot
 -----------
 
 ![Screenshot](https://github.com/andmej/computer_graphics_challenges/blob/master/challenge4/shots/shot.png?raw=true)
+
+
+Video demo
+-----------
+
+See the (video demo on YouTube)[http://www.youtube.com/watch?v=SfxGiCqAHNg].
