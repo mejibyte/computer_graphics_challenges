@@ -28,3 +28,10 @@ Like challenge 3, but in OpenGL. Additionally, add functionality to move the cam
 [![Screenshot 1](https://github.com/andmej/computer_graphics_challenges/blob/master/challenge4/shots/shot.png?raw=true)](https://github.com/andmej/computer_graphics_challenges/tree/master/challenge4)
 
 See the [video demo on YouTube](http://www.youtube.com/watch?v=SfxGiCqAHNg).
+
+Challenge 5 - 3D Bézier surfaces
+---------------------------------
+
+Render a Bézier surface based on some control points that are to be read from a text file.
+
+[![Screenshot](https://github.com/andmej/computer_graphics_challenges/blob/master/challenge5/pack/shot.png?raw=true)](https://github.com/andmej/computer_graphics_challenges/tree/master/challenge5)
