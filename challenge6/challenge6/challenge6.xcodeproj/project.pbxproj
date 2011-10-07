@@ -1,0 +1,208 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3268AD14143FA35700AD9A93 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3268AD13143FA35700AD9A93 /* main.cpp */; };
+		3268AD1C143FA39200AD9A93 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3268AD1B143FA39200AD9A93 /* OpenGL.framework */; };
+		3268AD1E143FA39900AD9A93 /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3268AD1D143FA39900AD9A93 /* GLUT.framework */; };
+		3268AD21143FA40C00AD9A93 /* example.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3268AD1F143FA40C00AD9A93 /* example.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		3268AD0D143FA35700AD9A93 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		3268AD0F143FA35700AD9A93 /* challenge6 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = challenge6; sourceTree = BUILT_PRODUCTS_DIR; };
+		3268AD13143FA35700AD9A93 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		3268AD1B143FA39200AD9A93 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
+		3268AD1D143FA39900AD9A93 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = System/Library/Frameworks/GLUT.framework; sourceTree = SDKROOT; };
+		3268AD1F143FA40C00AD9A93 /* example.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = example.cpp; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3268AD0C143FA35700AD9A93 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3268AD1E143FA39900AD9A93 /* GLUT.framework in Frameworks */,
+				3268AD1C143FA39200AD9A93 /* OpenGL.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3268AD04143FA35600AD9A93 = {
+			isa = PBXGroup;
+			children = (
+				3268AD1D143FA39900AD9A93 /* GLUT.framework */,
+				3268AD1B143FA39200AD9A93 /* OpenGL.framework */,
+				3268AD12143FA35700AD9A93 /* challenge6 */,
+				3268AD10143FA35700AD9A93 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3268AD10143FA35700AD9A93 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3268AD0F143FA35700AD9A93 /* challenge6 */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3268AD12143FA35700AD9A93 /* challenge6 */ = {
+			isa = PBXGroup;
+			children = (
+				3268AD13143FA35700AD9A93 /* main.cpp */,
+				3268AD1F143FA40C00AD9A93 /* example.cpp */,
+			);
+			path = challenge6;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3268AD0E143FA35700AD9A93 /* challenge6 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3268AD18143FA35700AD9A93 /* Build configuration list for PBXNativeTarget "challenge6" */;
+			buildPhases = (
+				3268AD0B143FA35700AD9A93 /* Sources */,
+				3268AD0C143FA35700AD9A93 /* Frameworks */,
+				3268AD0D143FA35700AD9A93 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = challenge6;
+			productName = challenge6;
+			productReference = 3268AD0F143FA35700AD9A93 /* challenge6 */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3268AD06143FA35600AD9A93 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 3268AD09143FA35600AD9A93 /* Build configuration list for PBXProject "challenge6" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 3268AD04143FA35600AD9A93;
+			productRefGroup = 3268AD10143FA35700AD9A93 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3268AD0E143FA35700AD9A93 /* challenge6 */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3268AD0B143FA35700AD9A93 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3268AD14143FA35700AD9A93 /* main.cpp in Sources */,
+				3268AD21143FA40C00AD9A93 /* example.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		3268AD16143FA35700AD9A93 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		3268AD17143FA35700AD9A93 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		3268AD19143FA35700AD9A93 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		3268AD1A143FA35700AD9A93 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3268AD09143FA35600AD9A93 /* Build configuration list for PBXProject "challenge6" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3268AD16143FA35700AD9A93 /* Debug */,
+				3268AD17143FA35700AD9A93 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3268AD18143FA35700AD9A93 /* Build configuration list for PBXNativeTarget "challenge6" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3268AD19143FA35700AD9A93 /* Debug */,
+				3268AD1A143FA35700AD9A93 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3268AD06143FA35600AD9A93 /* Project object */;
+}
