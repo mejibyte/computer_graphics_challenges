@@ -35,3 +35,10 @@ Challenge 5 - 3D Bézier surfaces
 Render a Bézier surface based on some control points that are to be read from a text file.
 
 [![Screenshot](https://github.com/andmej/computer_graphics_challenges/blob/master/challenge5/pack/shot.png?raw=true)](https://github.com/andmej/computer_graphics_challenges/tree/master/challenge5)
+
+Challenge 6 - Robotic Arm in OpenGL with lighting
+-------------------------
+
+Like challenge 4, but add lighting to the scene.
+
+[![Screenshot 1](https://github.com/andmej/computer_graphics_challenges/blob/master/challenge6/shots/Screen%20shot%202011-10-07%20at%2017.00.12.png?raw=true  )](https://github.com/andmej/computer_graphics_challenges/tree/master/challenge6)
