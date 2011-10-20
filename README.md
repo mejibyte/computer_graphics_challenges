@@ -42,3 +42,10 @@ Challenge 6 - Robotic Arm in OpenGL with lighting
 Like challenge 4, but add lighting to the scene.
 
 [![Screenshot 1](https://github.com/andmej/computer_graphics_challenges/blob/master/challenge6/shots/Screen%20shot%202011-10-07%20at%2017.00.12.png?raw=true  )](https://github.com/andmej/computer_graphics_challenges/tree/master/challenge6)
+
+Challenge 6 - Robotic Arm in OpenGL with textures
+-------------------------
+
+Like challenge 6, but add textures.
+
+[![Screenshot 1](https://github.com/andmej/computer_graphics_challenges/blob/master/challenge7/shots/Screen shot 2011-10-19 at 20.20.35?raw=true)](https://github.com/andmej/computer_graphics_challenges/tree/master/challenge7)
