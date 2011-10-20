@@ -1,0 +1,55 @@
+<html>
+
+<head>
+<title>TextureBMP program</title>
+<meta name="GENERATOR" content="Microsoft FrontPage 3.0">
+</head>
+
+<body>
+
+<p align="center"><big><big><big><u><strong>TextureBMP</strong></u></big></big></big></p>
+
+<p><strong>TextureBMP</strong> is sample C++ code illustrating the use of textures in
+OpenGL. &nbsp; It is intended to accompany the book <em><strong>3D Computer Graphics: A
+mathematical approach with OpenGL</strong>, </em>by S. Buss, Cambridge University Press,
+2003. &nbsp; However, it can be used independently as well.</p>
+
+<p><strong>TextureBMP </strong>reads a texture map from a bitmap file (<strong>.bmp</strong>
+extension).&nbsp; Bitmap files can be created with many standard graphics editting
+programs, include the PC program <strong>Paint</strong>.&nbsp;&nbsp; These programs often
+allow coverting other file formats to bitmap images.&nbsp;&nbsp; The main program is in <strong>TextureMap.cpp.
+&nbsp; </strong>The C++ class <strong>RgbImage</strong> is used to read the image data
+from a bitmap file.</p>
+
+<p>There are several options for downloading the files. 
+
+<ul>
+  <li><a href="TextureBMPProject.zip">TextureBMPProject.zip</a>: A zip file, including the
+    source files, Microsoft Visual C++ workspace and project files, Win32 executable, and a
+    bitmap file..</li>
+  <li><a href="TextureBMP.zip">TextureBMP.zip</a>: A zip file, with sources files, the
+    executable, and the bitmap file..</li>
+  <li><a href="TextureBMP.cpp">TextureBMP.cpp</a> and <a href="RgbImage.cpp">RgbImage.cpp</a>
+    and <a href="RgbImage.h">RgbImage.h</a> and <a href="TextureBMP.exe">TextureBMP.exe</a>
+    and <a href="RedLeavesTexture.bmp">RedLeavesTexture.bmp</a>:&nbsp; Download the three
+    source files, the executable, and the texture map one at a time.</li>
+</ul>
+
+<p><strong>Things to look at:</strong> 
+
+<ol>
+  <li>Compile and run the program.&nbsp; Note how it behaves when the window is resized larger
+    and smaller.&nbsp; Do you see an unwanted aliasing problems?</li>
+  <li>Look at how texture coordinates must be explicitly given with <strong>glTexCoord2f</strong>
+    commands as the quad is drawn.</li>
+  <li>The RgbImage class returns the pixels in an array.&nbsp; Each row of the array begins on
+    a word boundary (so the rows are padded as necessary to make this work).&nbsp; This is
+    what OpenGL expects by default, otherwise, we would have had use the <strong>glPixelStore</strong>
+    command to inform OpenGL about the row alignment.</li>
+  <li>Try modifying the program to display the mirror-image of the texture.&nbsp; You do not
+    need to modify the texture, just the teture coordinates.</li>
+</ol>
+
+<p>&nbsp;</p>
+</body>
+</html>
