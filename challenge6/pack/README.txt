@@ -1,7 +1,7 @@
-Challenge 4 - Andrés Mejía Posada
-=================================
+Challenge 6 - Andrés Mejía
+==========================
 
-Create a robotic arm in OpenGL with 3 articulations: shoulder, elbow and wrist.
+Like challenge 4 (create a robotic arm in OpenGL with 3 articulations) but add lighting to the scene.
 
 * The shoulder should rotate around the Y and Z axes.
 * The elbow should rotate around the Z axis.
@@ -12,7 +12,7 @@ Run it yourself
 
 These instructions are for Mac OS X. Your mileage may vary.
 
-    cd challenge4/src
+    cd challenge6/challenge6
     g++ main.cpp -framework GLUT -framework OpenGL -o arm
     ./arm
     
@@ -26,13 +26,12 @@ On the window that appears, press:
 * `↑` and `↓` to increase or decrease the camera's distance to the object.
 * `←` and `→` to increase or decrease the camera's angle of rotation around the Z axis.
 
-Screenshot
+Screenshots
 -----------
 
-See shot.png.
+See /shots.
 
-
-Video demo
+Source code
 -----------
 
-See the video demo on YouTube: http://www.youtube.com/watch?v=SfxGiCqAHNg
+Available at https://github.com/andmej/computer_graphics_challenges.
