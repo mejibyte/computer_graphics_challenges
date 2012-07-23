@@ -31,9 +31,3 @@ On the window that appears, press:
 * `a` and `d` to rotate the camera around the Y axis (the green one).
 * `w` and `s` to increase or decrease the camera's distance to the origin.
 * `q` and `e` to rotate the camera around the X axis (the red one).
-
-
-Video demo
------------
-
-Coming soon. I'm uploading it to YouTube.
