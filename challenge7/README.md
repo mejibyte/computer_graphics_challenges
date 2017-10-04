@@ -29,4 +29,4 @@ On the window that appears, press:
 Screenshot
 -----------
 
-![Screenshot](https://github.com/andmej/computer_graphics_challenges/blob/master/challenge7/shots/Screen shot 2011-10-19 at 20.20.35.png?raw=true)
+![Screenshot](https://github.com/andmej/computer_graphics_challenges/blob/master/challenge7/shots/Screen%20shot%202011-10-19%20at%2020.20.35.png?raw=true)
