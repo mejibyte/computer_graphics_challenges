@@ -48,4 +48,4 @@ Challenge 6 - Robotic Arm in OpenGL with textures
 
 Like challenge 6, but add textures.
 
-[![Screenshot 1](https://github.com/andmej/computer_graphics_challenges/blob/master/challenge7/shots/Screen shot 2011-10-19 at 20.20.35.png?raw=true)](https://github.com/andmej/computer_graphics_challenges/tree/master/challenge7)
+[![Screenshot 1](https://github.com/andmej/computer_graphics_challenges/blob/master/challenge7/shots/Screen%20shot%202011-10-19%20at%2020.20.35.png?raw=true)](https://github.com/andmej/computer_graphics_challenges/tree/master/challenge7)
